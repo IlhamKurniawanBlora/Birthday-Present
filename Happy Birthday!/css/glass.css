@@ -1,0 +1,57 @@
+/* CSS untuk efek glass */
+.transparent-div {
+  /* animation: fadeIn 2s ease-in forwards; */
+  opacity: 0;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7); /* Transparansi dapat disesuaikan dengan nilai alpha pada rgba */
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'YourHandwritingFont', cursive; /* Gantilah 'YourHandwritingFont' dengan nama font tulisan bersambung yang Anda inginkan */
+  display: none;
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.transparent-div p {
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333; /* Warna teks dapat disesuaikan */
+}
+.sweetalert-glass {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border-radius: 10px;
+  }
+
+.sweetalert-size {
+  width: 600px;
+}
+
+  /* CSS untuk menyesuaikan tampilan title dan content */
+  .sweetalert-title {
+    color: #ffffff;
+    font-size: 50px;
+    font-family: 'Romanesco', cursive;
+    font-family: 'Satisfy', cursive;
+  }
+
+  .sweetalert-text {
+    color: #ffffff;
+  }
+
+  .swal2-html-container {
+    color: #ffffff;
+  }

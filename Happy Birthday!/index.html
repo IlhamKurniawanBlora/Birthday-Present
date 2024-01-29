@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Dinda</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/typed.css">
+    <link rel="stylesheet" href="css/glass.css">
+     <!-- Include the Dark theme -->
+     <link rel="stylesheet" href="../node_modules/@sweetalert2/theme-dark/dark.css">
+     <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+     
+</head>
+<body>
+  <audio hidden controls loop id="myAudio">
+    <source src="assets/Michael Carreon-The Simple Things.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung tag audio
+  </audio>
+  <main class="cd__main">
+    <div class="night div-center">
+      <h1 style="z-index: 1;" class="teks-ucapan">Happy Birthday Dinda</h1>
+      <h1 style="z-index: 1 ;color: aliceblue; text-align: center;" class="teks-ucapan-typed typed" id="typed">
+        <!-- <button type="button" id="playButton">Putar Musik</button> -->
+
+    </div>
+    </main>
+</body>
+<script>
+// fungsi Type Text
+new Typed('#typed',{
+  strings : ['','Semoga panjang umur','Sehat selalu','Doa terbaik untukmu','segala impianmu tercapai',],
+  typeSpeed : 100,
+  delaySpeed : 100,
+  loop : true
+});
+// fungsi mennampilkan alert untuk play music
+function alertMusic() {
+  Swal.fire({
+    html: '<h3>Michael Carreon - The Simple Things</h3><p>"This song reminds me of you"</p>',
+    showCancelButton: false,
+    imageUrl: '../javascript-flower-animation/assets/music.gif', 
+    imageWidth: '250px',
+    customClass: {
+            popup: 'sweetalert-glass',
+            title: 'sweetalert-title',
+            content: 'sweetalert-content',
+          },
+    confirmButtonColor: '#3085d6',
+    confirmButtonText: '<b>Play Music</b>',
+    footer: '<i>Created with💌 by <span style="color:skyblue;">Fauzan</span></i>',
+  }).then((hasil) => {
+  if (hasil.isConfirmed) {
+    const audio = document.getElementById('myAudio');
+    audio.play();
+    localStorage.setItem('isMusicPlaying', 'true');
+     // Menampilkan SweetAlert pesan
+     const c = setTimeout(() => {
+      alertPesan()
+      clearTimeout(c);
+    }, 15000);
+    
+}});
+};
+// fungsi menampilkan Alert Pesan
+function alertPesan() {
+  Swal.fire({
+    html: '</span></h1><p>Here s a present for u</p>',
+    imageUrl: '../javascript-flower-animation/assets/kado.gif', 
+    imageWidth: '250px',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '<b>Click Here</b>',
+    cancelButtonText: 'Cancel',
+    showCancelButton: false,
+    footer: '<i>Created with💌 by <span style="color:skyblue;">Fauzan</span></i>',
+  }).then((result) => {
+  if (result.isConfirmed) {
+  Swal.fire({
+    title: '<h1 style="color:skyblue;font-size:24px;" >A little message :</h1>',
+    html: '<i>"Hope your days filled with joy, success, and all the things that bring happiness into your life. May you continue to achive your goals and excel in your path to becoming <b><span style="color:skyblue;">a great doctor</span></b>"</i> <br> -Warm Regards, Fauzan',
+// Ganti dengan path GIF loading Anda
+    imageUrl: '../javascript-flower-animation/assets/wait.gif', 
+    imageAlt: 'Loading...',
+    imageWidth: '250px',
+    showConfirmButton: false
+  });
+// Simulasikan reload halaman setelah 2 detik
+setTimeout(function () {
+  window.location.href = 'flower.html';
+}, 10000);
+}});
+};
+
+// Menambahkan event listener saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function () {
+  // Menampilkan SweetAlert play Music
+  alertMusic();
+  // menghilangkan class not-loaded
+  const c = setTimeout(() => {
+    document.body.classList.remove("not-loaded");
+    clearTimeout(c);
+  }, 1000);
+});
+
+</script>
+</html>
